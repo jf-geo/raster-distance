@@ -67,6 +67,7 @@ To do:
         - light gdal.Translate wrapper
         - method for processing raster line by line/tile by tile.
     - Create class for calulating distances from an orthographic view.
+    - Create class for calculating depth of field blurring (maybe).
 
 """
 
