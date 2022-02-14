@@ -8,20 +8,20 @@ I use QGIS' 3D functionality to create mockup 3D visualisations before creating 
 
 ## Functionality
 #### Current functionality:  
-    - Convert QGIS 3D coordinates to real world coordinates, so long as you know the false origin of the 3D view.  
-    - Calculate the distances between a real world point and each cell in an elevation raster.  
+- Convert QGIS 3D coordinates to real world coordinates, so long as you know the false origin of the 3D view.  
+- Calculate the distances between a real world point and each cell in an elevation raster.  
   
 #### Potential future functionality:  
-    - Calculate the false origin of the 3D view based on base layers being used.  
-    - Process rasters strip by strip instead of loading everything into memory.  
-    - Calculate distance based on an orthographic view.  
-    - Calculate actual depth-of-field blurring based on camera parameters.  
-    - Wrap functionality into a QGIS processing algorithm.  
-    - Create plugin (maybe).  
+- Calculate the false origin of the 3D view based on base layers being used.  
+- Process rasters strip by strip instead of loading everything into memory.  
+- Calculate distance based on an orthographic view.  
+- Calculate actual depth-of-field blurring based on camera parameters.  
+- Wrap functionality into a QGIS processing algorithm.  
+- Create plugin (maybe).  
   
 #### Known bugs/issues:  
-    - Script produces an error when trying to transfer a NoDataValue from the input raster to the output raster.  
-    - Script loads the entire input raster band into memory and doesn't check whether or not that will cause a MemoryError.  
+- Script produces an error when trying to transfer a NoDataValue from the input raster to the output raster.  
+- Script loads the entire input raster band into memory and doesn't check whether or not that will cause a MemoryError.  
   
 ## Requirements  
 Requires numpy and gdal python packages, which will be included by default if using a QGIS 3+ python environment.  
