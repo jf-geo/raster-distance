@@ -1,4 +1,4 @@
-# raster-distance
+# Raster Distance
 A python script for calculating the distance from a point for each cell in an elevation raster. Developed to create rough depth-of-field masks for QGIS 3D exports.  
   
 Made available under a [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
