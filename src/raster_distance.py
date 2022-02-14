@@ -70,6 +70,7 @@ To do:
         - Need to find out how the false origin is determined first.
         It's probably something to do with the first layers added to the view.
     - Create class for calulating distances from an orthographic view.
+    - Create class for calculating depth of field blurring (maybe).
 
 """
 
