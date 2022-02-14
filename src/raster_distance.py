@@ -34,7 +34,7 @@ functions
 Example:
 
     >>> # Import PerspectiveDistance class
-    >>> from perspective_distance import PerspectiveDistance
+    >>> from raster_distance import PerspectiveDistance
 
     >>> # Input camera coordinates
     >>> Cxyz = (122848, 7704.62, -291798)
