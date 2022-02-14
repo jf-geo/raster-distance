@@ -11,7 +11,7 @@ point and create a new raster with distances from each cell in the
 elevation raster to the reference point.
 
 This is done using the PerspectiveDistance class, which has the following
-functions
+functions:
 
     * PerspectiveDistance.qgis_3d_view_crs_to_crs()
         [static method]
@@ -48,7 +48,7 @@ Example:
     >>> # Set real world coordinates
     >>> PD.set_point(*xyz)
 
-    >>> # Definte input/output raster filenames
+    >>> # Define input/output raster filenames
     >>> input_raster = "~/DEM.vrt"
 
     >>> output_raster = input_raster.replace(".vrt", "_distance-from-camera.tif")
@@ -78,7 +78,6 @@ import os
 
 import numpy as np
 
-from os import PathLike
 from osgeo import gdal
 
 gdal.UseExceptions()
@@ -136,17 +135,17 @@ class PerspectiveDistance:
     ############################################################################
 
     @staticmethod
-    def dist_from_point(a: np.array, x: float, y: float, z: float) -> np.array:
+    def dist_from_point(a: np.ndarray, x: float, y: float, z: float) -> np.ndarray:
         """Calculate the euclidean distance from a point (x,y,z) for each point in an array
 
         Args:
-            a (np.array): Array of values to calulate distance to.
+            a (np.ndarray): Array of coordinates to calulate distance to.
             x (float): X coordinate of point to calculate distance from.
             y (float): Y coordinate of point to calculate distance from.
             z (float): Z coordinate of point to calculate distance from.
 
         Returns:
-            np.array: Array of distances from xyz point to each value in the input array.
+            np.ndarray: Array of distances from xyz point to each coordinate in the input array.
         """
 
         # Array of reference point coordinates
@@ -166,7 +165,7 @@ class PerspectiveDistance:
     ############################################################################
 
     @staticmethod
-    def xyz_array_from_raster(raster_src: gdal.Dataset, band_no: int = 1) -> np.array:
+    def xyz_array_from_raster(raster_src: gdal.Dataset, band_no: int = 1) -> np.ndarray:
         """[summary]
 
         Args:
@@ -174,7 +173,7 @@ class PerspectiveDistance:
             band_no (int, optional): The raster band to read from. Defaults to 1.
 
         Returns:
-            np.array: A 3d numpy array of 3 stacked 2d arrays, x coordinates, y coordinates, as band values.
+            np.ndarray: A 3d numpy array of 3 stacked 2d arrays, x coordinates, y coordinates, and band values.
         """
 
         # Default to band number 1 if band_no not with acceptable range
@@ -235,8 +234,8 @@ class PerspectiveDistance:
 
     def calc_perspective_difference(
         self,
-        input_raster: PathLike,
-        output_raster: PathLike,
+        input_raster: os.PathLike,
+        output_raster: os.PathLike,
         band_no=1,
         scale=False,
         output_format="GTIFF",
@@ -245,14 +244,13 @@ class PerspectiveDistance:
         """Calculate a perspective distance raster from an input raster.
 
 
-        Perspective point must be set first using PerspectiveDistance.set_point(x, y, z)
-        or PerspectiveDistance(x, y, z)
+        Perspective point must be set first using PerspectiveDistance.set_point(x, y, z).
 
         Writes out to a geotiff by default.
 
         Args:
-            input_raster (PathLike): Input raster filename to calculate distance to from perspective point.
-            output_rater (PathLike): Output raster filename
+            input_raster (os.PathLike): Input raster filename to calculate distance to from perspective point.
+            output_rater (os.PathLike): Output raster filename
             band_no (int, optional): Band number of input raster to process. Defaults to 1.
             scale (bool, optional): Whether or not to scale distance values between 0 - 1. Defaults to False.
             output_format (str, optional): Raster format of output file. Defaults to GTIFF.
