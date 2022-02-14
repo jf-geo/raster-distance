@@ -66,6 +66,9 @@ To do:
     - Create base class and add:
         - light gdal.Translate wrapper
         - method for processing raster line by line/tile by tile.
+    - Add method for calculating a QGIS 3D view's false origin.
+        - Need to find out how the false origin is determined first.
+        It's probably something to do with the first layers added to the view.
     - Create class for calulating distances from an orthographic view.
 
 """
@@ -84,24 +87,11 @@ gdal.UseExceptions()
 __author__ = "James Ford"
 __copyright__ = "Copyright (c) 2022 James Ford"
 __credits__ = ["James Ford"]
-__license__ = """MIT License
+__license__ = """CC BY-NC-SA 4.0
+https://creativecommons.org/licenses/by-nc-sa/4.0/
 Copyright (c) 2022 James Ford
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
 """
+
 __version__ = "0.1.0"
 __maintainer__ = "James Ford"
 __email__ = "irvine.ford@gmail.com"
